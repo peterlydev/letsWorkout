@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const workouts = require('./routes/workouts');
 
 const app = express();
 
@@ -8,9 +9,7 @@ app.use((req, res, next) => {
     next()
 }); 
 
-app.get('/', (req, res) => {
-    res.json({mssg: 'Welcome to the app!'})
-})
+app.get(workouts);
 
 app.listen(process.env.PORT, () => {
     console.log('Listening on port', process.env.PORT);
