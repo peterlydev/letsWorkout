@@ -9,7 +9,7 @@ app.use((req, res, next) => {
     next()
 }); 
 
-app.get(workouts);
+app.get('/api/workouts', workouts);
 
 app.listen(process.env.PORT, () => {
     console.log('Listening on port', process.env.PORT);
