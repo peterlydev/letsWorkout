@@ -1,14 +1,12 @@
 const Workout = require("../models/Workout");
 const mongoose = require('mongoose');
 
-// Get all workouts
 const getWorkouts = async (req, res) => {
   const workouts = await Workout.find({}).sort({ createdAt: -1 });
 
   res.status(200).json(workouts);
 };
 
-// Get a single workout
 const getWorkout = async(req, res) => {
     const { id } = req.params
 
@@ -51,9 +49,8 @@ const deleteWorkout = async (req, res) => {
     if(!workout){
         return res.status(404).json({error: 'No such workout'})
     }
-
+    
     res.status(200).json(workout);
-
 }
 
 //update a workout
