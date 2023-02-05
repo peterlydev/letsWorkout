@@ -16,6 +16,8 @@ const getWorkout = async(req, res) => {
     if(!workout){
         return res.status(404).json({error: 'No such workout'})
     }
+
+    res.status(200).json(workout);
 }
 
 //create new workout
@@ -36,5 +38,7 @@ const createWorkout = async (req, res) => {
 //update a workout
 
 module.exports = {
-  createWorkout,
+    getWorkouts,
+    getWorkout,
+    createWorkout,
 };
