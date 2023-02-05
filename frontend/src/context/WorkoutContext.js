@@ -10,6 +10,8 @@ export const WorkoutsContext = createContext()
 
 //Making a context provider component. This will be a regular react component that's going to wrap the rest of the application eventually
 
+//Go to index.js and then importing this file
+
 export const WorkoutsContextProvider = () => {
 
     return(
