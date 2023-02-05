@@ -9,7 +9,6 @@ const {
 
 const router = express.Router();
 
-
 router.get("/", getWorkouts);
 
 router.get("/:id", getWorkout);
