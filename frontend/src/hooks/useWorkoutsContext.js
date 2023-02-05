@@ -1,14 +1,12 @@
-import { WorkoutsContext } from "../context/WorkoutContext";
-import { useContext } from 'react'
-
-//passing the workoutsContext object to the context. Returns to us the value of this context. Value we passed into the providers component
+import { WorkoutsContext } from "../context/WorkoutsContext"
+import { useContext } from "react"
 
 export const useWorkoutsContext = () => {
-    const context = useContext(WorkoutsContext)
+  const context = useContext(WorkoutsContext)
 
-    if (!context) {
-        throw Error('useWorkoutsContext must be used inside an WorkoutsContextProvider')
-    }
+  if(!context) {
+    throw Error('useWorkoutsContext must be used inside an WorkoutsContextProvider')
+  }
 
-    return context
+  return context
 }
