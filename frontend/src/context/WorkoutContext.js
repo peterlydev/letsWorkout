@@ -1,22 +1,33 @@
 import React from 'react'
-import { createContext } from 'react'
-
-//Allows us make a new context that we can provide to components in the application
-//Invokes the function. This creates a brand new context.
-//Need to export this.
-//Provide that context to the application component tree, so that the components can access it
+import { createContext, useReducer } from 'react'
 
 export const WorkoutsContext = createContext()
 
-//Making a context provider component. This will be a regular react component that's going to wrap the rest of the application eventually
 
-//Go to index.js and then importing this file
+export const workoutsReducer = (state, action) => {
+    switch (action.type) {
+        case 'SET_WORKOUTS':
+            return {
+                workouts: action.payload
+            }
+        case 'CREATE WORKOUT':
+            return {
+                workouts: [action.payload, ...state.workouts]
+            }
+        default:
+            return state
+        }
+    }
 
-export const WorkoutsContextProvider = () => {
+
+export const WorkoutsContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(workoutsReducer, {
+        workouts: null
+    })
 
     return(
-        <WorkoutsContextProvider>
-
+        <WorkoutsContextProvider value={{state, dispatch}}>
+            { children }
         </WorkoutsContextProvider>
     )
 }
