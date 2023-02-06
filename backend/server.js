@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/workouts', workouts);
-app.use('/api/users'/users)
+app.use('/api/user', users)
 
 mongoose
   .connect(process.env.MONGO_URI)
