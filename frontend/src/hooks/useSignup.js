@@ -13,7 +13,7 @@ export const useSignup = () => {
         const response = await fetch('/api/user/signup', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({email, password})
         })
         const json = await response.json()
 
@@ -26,7 +26,7 @@ export const useSignup = () => {
             localStorage.setItem('user', JSON.stringify(json))
 
             //update the auth context
-            dispatch({ type: 'LOGIN', PAYLOAD: json })
+            dispatch({ type: "LOGIN", payload: json })
 
             setIsLoading(false)
         }
