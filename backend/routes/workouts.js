@@ -9,6 +9,7 @@ const {
 
 const requireAuth = require('../middleware/requireAuth')
 
+//require auth for all routes
 const router = express.Router();
 
 router.use(requireAuth);
